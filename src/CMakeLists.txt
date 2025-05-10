@@ -1,3 +1,5 @@
+set(GODOTCPP_SUFFIX $<GENEX_EVAL:$<TARGET_PROPERTY:godot::cpp,GODOTCPP_SUFFIX>>)
+
 add_library(${PROJECT_NAME} SHARED
     gdexample.cpp
     gdexample.hpp
@@ -8,6 +10,8 @@ add_library(${PROJECT_NAME} SHARED
 set_target_properties( ${PROJECT_NAME} PROPERTIES
     CXX_EXTENSIONS OFF
     FOLDER ${PROJECT_NAME}
+    PREFIX ""
+    OUTPUT_NAME "${PROJECT_NAME}${GODOTCPP_SUFFIX}"
 )
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_23)

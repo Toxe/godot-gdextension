@@ -7,7 +7,7 @@ add_library(${PROJECT_NAME} SHARED
     register_types.hpp
 )
 
-set_target_properties( ${PROJECT_NAME} PROPERTIES
+set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_EXTENSIONS OFF
     FOLDER ${PROJECT_NAME}
     PREFIX ""
@@ -24,3 +24,6 @@ target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
 
 get_target_property("${PROJECT_NAME}_sources" ${PROJECT_NAME} SOURCES)
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} PREFIX "Sources" FILES "${PROJECT_NAME}_sources")
+
+# automatically generate the .gdextension file in the Godot project /bin directory
+configure_file(gdextension.in "${GDEXTENSION_LIBRARY_OUTPUT_DIRECTORY}/${PROJECT_NAME}.gdextension" NEWLINE_STYLE UNIX)

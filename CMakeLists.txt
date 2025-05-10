@@ -4,7 +4,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 # the project name is also the name of the resulting GDExtension library
 project("gdextension_test" LANGUAGES CXX)
 
-set(GODOT_PROJECT_NAME "GDExtension")
+set(GODOT_PROJECT_NAME "GDExtensionExampleProject")
 set(GODOT_PROJECT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${GODOT_PROJECT_NAME}")
 set(GDEXTENSION_LIBRARY_OUTPUT_DIRECTORY "${GODOT_PROJECT_DIRECTORY}/bin")
 

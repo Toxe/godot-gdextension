@@ -1,2 +1,2 @@
-# Godot GDExtension Tests
+# Godot GDExtension Test Project
 
